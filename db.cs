@@ -13,6 +13,7 @@ namespace dpState
     public class MyTableNameAttribute : Attribute
     {
         public string Name { get; set; }
+        public MyTableNameAttribute(string Name) { this.Name = Name; }
     }
 
     [AttributeUsage(AttributeTargets.Property)]
@@ -21,7 +22,7 @@ namespace dpState
         public string ColumnName { get; set; }
     }
 
-    [MyTableName(Name = "Employees")]
+    [MyTableName("Employees")]
     class Employee
     {
         public int Id { get; set; }
